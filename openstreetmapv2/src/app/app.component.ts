@@ -24,7 +24,7 @@ export class AppComponent {
         })
       ],
       view: new ol.View({
-        center: ol.proj.fromLonLat([73.8567, 18.5204]),
+        center: ol.proj.fromLonLat([12.56738, 41.87194]),
         zoom: 8
       })
     });
