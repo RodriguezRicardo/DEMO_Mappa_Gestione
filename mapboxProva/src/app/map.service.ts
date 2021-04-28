@@ -28,6 +28,7 @@ export class MapService {
       center: [this.lng, this.lat]
     })
 
+    //per cercare le varie città
     this.map.addControl(
       new MapboxGeocoder({
           accessToken: mapboxgl.accessToken,
@@ -35,7 +36,18 @@ export class MapService {
       })
     );
 
+    //per aumentare, diminuire, ruotare la mappa
     this.map.addControl(new mapboxgl.NavigationControl());
+
+    //per geolocalizzare la posizione
+    this.map.addControl(
+        new mapboxgl.GeolocateControl({
+          positionOptions: {
+            enableHighAccuracy: true
+          },
+          trackUserLocation: true
+        })
+    );
   }
 
 }
