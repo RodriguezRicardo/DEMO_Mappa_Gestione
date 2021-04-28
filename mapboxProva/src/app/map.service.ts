@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import * as mapboxgl from 'mapbox-gl';
 import { environment } from "../environments/environment";
 
-import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
+import * as MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
 import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css';
 
 @Injectable({
@@ -17,7 +17,7 @@ export class MapService {
   zoom = 12
 
   constructor() {
-    mapboxgl.accessToken = environment.mapbox.accessToken;
+    mapboxgl.accessToken=environment.mapbox.accessToken;
   }
 
   buildMap() {
@@ -27,9 +27,15 @@ export class MapService {
       zoom: this.zoom,
       center: [this.lng, this.lat]
     })
-    this.map.addControl(new mapboxgl.NavigationControl(), new MapboxGeocoder({
-      accessToken: mapboxgl.accessToken,
-      mapboxgl: mapboxgl}) );
+
+    this.map.addControl(
+      new MapboxGeocoder({
+          accessToken: mapboxgl.accessToken,
+          mapboxgl: mapboxgl
+      })
+    );
+
+    this.map.addControl(new mapboxgl.NavigationControl());
   }
 
 }
