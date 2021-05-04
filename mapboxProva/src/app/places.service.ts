@@ -8,7 +8,7 @@ export class PlacesService {
 
   constructor(private http: HttpClient) { }
   searchPlace(place: string) {
-    const url = `https://3000-amaranth-shrew-onydfbz7.ws-eu03.gitpod.io/place/${place}`;
+    const url = `https://3000-brown-horse-2kbqj5ei.ws-eu03.gitpod.io/place/${place}`;
     return this.http.get(url);
   }
 }
