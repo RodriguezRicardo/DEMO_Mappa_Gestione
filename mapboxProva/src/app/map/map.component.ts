@@ -11,8 +11,8 @@ import { PlacesService } from '../places.service';
 })
 export class MapComponent implements OnInit {
   results: any;
-  text : any;
-  city : any;
+  text: any;
+  city: any;
 
   obs: Observable<Object>;
   resPlace: any;
@@ -22,19 +22,19 @@ export class MapComponent implements OnInit {
   ngOnInit() {
     this.map.buildMap();
 
-    this.map.getDataSubjectObs().subscribe(message => this.results = message);
+    //riceve i dati dalla mappa
+    this.map.getDataSubjectObs().subscribe(this.getMapSearchData);
   }
 
-  submit(pl : HTMLLabelElement){
-    this.city = pl.textContent;
-    console.log(this.city)
+  getMapSearchData = (message) => {
+    this.results = message;
+    this.city = this.results.text;
     this.obs = this.place.searchPlace(this.city); //richiamare dati dal server
-    this.obs.subscribe(this.getData);
+    this.obs.subscribe(this.getDataServer);
   }
 
-  getData = (data) => {
+  getDataServer = (data) => {
     this.resPlace = data[0];
     console.log(this.resPlace);
   }
-
 }
