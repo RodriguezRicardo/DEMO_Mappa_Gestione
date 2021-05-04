@@ -3,8 +3,9 @@
 </div>
 
 <div *ngIf = "results.text">
-  <p><span #place>{{results.text}}</span>, <span #state>{{results.text}}</span></p>
-  <p>{{resPlace.Descrizione}}</p>
-  <p>{{resPlace.Stato}}</p>
-
+  <div class = "infomation">
+    <p><span #place>{{results.text}}</span>, <span #state>{{results.text}}</span></p>
+    <p>{{resPlace.Descrizione}}</p>
+    <p>{{resPlace.Stato}}</p>
+  </div>
 </div>

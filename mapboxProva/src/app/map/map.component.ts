@@ -35,6 +35,6 @@ export class MapComponent implements OnInit {
 
   getDataServer = (data) => {
     this.resPlace = data[0];
-    console.log(this.resPlace);
+
   }
 }
