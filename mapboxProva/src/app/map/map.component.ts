@@ -13,6 +13,8 @@ export class MapComponent implements OnInit {
   results: any;
   text: any;
   city: any;
+  y : any;
+  x : any;
 
   obs: Observable<Object>;
   resPlace: any;
@@ -28,8 +30,11 @@ export class MapComponent implements OnInit {
 
   getMapSearchData = (message) => {
     this.results = message;
-    this.city = this.results.text;
-    this.obs = this.place.searchPlace(this.city); //richiamare dati dal server
+    this.y = this.results.center[1];
+    this.x = this.results.center[0];
+    console.log(this.y, this.x);
+
+    this.obs = this.place.searchPlace(this.y, this.x); //richiamare dati dal server
     this.obs.subscribe(this.getDataServer);
   }
 

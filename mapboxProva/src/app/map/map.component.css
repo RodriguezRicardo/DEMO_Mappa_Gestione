@@ -1,11 +1,27 @@
 .map-container {
-width: 1200px;
-height: 600px;
+  width: 1210px;
+  height: 600px;
+  margin-left: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-radius: 10px;
 }
 p{
   text-align: justify;
 }
 .infomation{
+  display: block;
+  border-radius: 10px;
+  background-color: #F3E8EE;
+  margin-left: 10px;
   width: 1200px;
+  padding: 10px;
+  justify-content: center;
 }
+
+.imgContainer
+{
+  text-align: center;
+}
+
 

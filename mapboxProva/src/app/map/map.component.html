@@ -2,10 +2,17 @@
 
 </div>
 
-<div *ngIf = "results.text">
-  <div class = "infomation">
+<div class = "infomation" *ngIf = "results.text">
+  <div class = "text">
     <p><span #place>{{results.text}}</span>, <span #state>{{results.text}}</span></p>
+    <p><b>Descrizione:</b></p>
     <p>{{resPlace.Descrizione}}</p>
+    <p><b>Stato:</b></p>
     <p>{{resPlace.Stato}}</p>
+
+    <div class="imgContainer">
+      <img src="{{resPlace.Immagine}}" alt="immagine" width="50%" height="50%">
+    </div>
+
   </div>
 </div>
