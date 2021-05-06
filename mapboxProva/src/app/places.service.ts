@@ -7,8 +7,8 @@ import { HttpHeaders, HttpClient } from '@angular/common/http';
 export class PlacesService {
 
   constructor(private http: HttpClient) { }
-  searchPlace(y: any, x: any) {
-    const url = `https://3000-turquoise-chickadee-cjq0tjiy.ws-eu03.gitpod.io/place/${y}/${x}`;
+  searchPlace(y: any, x: any, y1 :any, x1: any) {
+    const url = `https://3000-turquoise-flyingfish-srj91d7n.ws-eu03.gitpod.io/place/${y}/${x}/${y1}/${x1}`;
     return this.http.get(url);
   }
 }
