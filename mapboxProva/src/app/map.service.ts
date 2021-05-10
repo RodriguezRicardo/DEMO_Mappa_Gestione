@@ -37,12 +37,13 @@ export class MapService {
     })
 
     //per cercare le varie città
-    this.map.addControl(
-      this.geocoder = new MapboxGeocoder({
-        accessToken: mapboxgl.accessToken,
-        mapboxgl: mapboxgl
-      })
-    );
+    this.geocoder = new MapboxGeocoder({
+      accessToken: mapboxgl.accessToken,
+      mapboxgl: mapboxgl
+    })
+
+
+    document.getElementById('geocoder').appendChild(this.geocoder.onAdd(this.map));
 
     //restituisce il json della ricerca
     this.geocoder.on('result', (ev) => {
